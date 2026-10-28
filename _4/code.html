@@ -1,0 +1,1382 @@
+<!DOCTYPE html>
+
+<html class="h-full" dir="rtl" lang="fa"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<meta content="mobile_tab" name="shell-type"/>
+<title>ادمین‌یار - دستیار هوشمند ادمین‌های اینستاگرام</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/misc/Farsi-Digits/font-face.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Vazirmatn:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<style>
+    @layer base {
+      html, body {
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+        font-family: 'Vazirmatn', 'Plus Jakarta Sans', sans-serif;
+      }
+      body {
+        overscroll-behavior: none;
+      }
+      .pb-safe {
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+      }
+      .pt-safe {
+        padding-top: env(safe-area-inset-top, 0px);
+      }
+      main > :first-child {
+        margin-top: 0 !important;
+      }
+      main > :last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+    ::-webkit-scrollbar {
+      display: none;
+    }
+    .view-transition {
+      transition: opacity 0.25s ease-in-out, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .tab-active > div {
+      background-color: #ebddff !important;
+    }
+    .tab-active > div > span {
+      color: #5b00c5 !important;
+      font-variation-settings: 'FILL' 1;
+    }
+    .tab-active > span {
+      color: #5300b7 !important;
+      font-weight: 700 !important;
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "tertiary-fixed-dim": "#ffb0cd",
+            "outline": "#7b7486",
+            "surface-bright": "#f8f9ff",
+            "on-error": "#ffffff",
+            "surface-container-low": "#eff4ff",
+            "secondary-fixed-dim": "#ddb7ff",
+            "on-primary-fixed": "#250059",
+            "tertiary-container": "#ab0467",
+            "on-secondary-fixed": "#2c0051",
+            "on-secondary-fixed-variant": "#6900b3",
+            "inverse-on-surface": "#eaf1ff",
+            "secondary-container": "#9c48ea",
+            "on-primary-fixed-variant": "#5b00c5",
+            "secondary": "#8127cf",
+            "on-primary": "#ffffff",
+            "secondary-fixed": "#f0dbff",
+            "on-error-container": "#93000a",
+            "outline-variant": "#ccc3d7",
+            "on-tertiary-fixed-variant": "#8c0053",
+            "on-tertiary": "#ffffff",
+            "on-secondary-container": "#fffbff",
+            "on-background": "#0b1c30",
+            "on-tertiary-fixed": "#3e0022",
+            "surface-container": "#e5eeff",
+            "primary-fixed-dim": "#d3bbff",
+            "surface": "#f8f9ff",
+            "tertiary": "#81004c",
+            "primary-fixed": "#ebddff",
+            "error-container": "#ffdad6",
+            "surface-variant": "#d3e4fe",
+            "inverse-primary": "#d3bbff",
+            "on-primary-container": "#dac5ff",
+            "on-tertiary-container": "#ffbcd4",
+            "surface-container-lowest": "#ffffff",
+            "primary-container": "#6d28d9",
+            "error": "#ba1a1a",
+            "inverse-surface": "#213145",
+            "primary": "#5300b7",
+            "on-surface": "#0b1c30",
+            "background": "#f8f9ff",
+            "surface-container-high": "#dce9ff",
+            "surface-tint": "#7331df",
+            "on-secondary": "#ffffff",
+            "tertiary-fixed": "#ffd9e4",
+            "surface-container-highest": "#d3e4fe",
+            "surface-dim": "#cbdbf5",
+            "on-surface-variant": "#4a4455"
+          },
+          borderRadius: {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "gutter-mobile": "0.75rem",
+            "space-md": "1rem",
+            "space-xs": "0.25rem",
+            "space-lg": "1.5rem",
+            "margin-mobile": "1rem",
+            "margin": "1.25rem",
+            "space-xl": "2rem",
+            "gutter": "1rem",
+            "space-sm": "0.5rem"
+          },
+          fontFamily: {
+            "headline-lg": ["Vazirmatn", "Plus Jakarta Sans"],
+            "title-md": ["Vazirmatn", "Plus Jakarta Sans"],
+            "label-md": ["Vazirmatn", "Plus Jakarta Sans"],
+            "headline-md": ["Vazirmatn", "Plus Jakarta Sans"],
+            "body-md": ["Vazirmatn", "Plus Jakarta Sans"],
+            "label-sm": ["Vazirmatn", "Plus Jakarta Sans"],
+            "label-lg": ["Vazirmatn", "Plus Jakarta Sans"],
+            "display-lg": ["Vazirmatn", "Plus Jakarta Sans"],
+            "display-lg-mobile": ["Vazirmatn", "Plus Jakarta Sans"],
+            "body-lg": ["Vazirmatn", "Plus Jakarta Sans"],
+            "headline-sm": ["Vazirmatn", "Plus Jakarta Sans"]
+          },
+          fontSize: {
+            "headline-lg": ["28px", { "lineHeight": "38px", "fontWeight": "700" }],
+            "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "label-md": ["12px", { "lineHeight": "18px", "fontWeight": "500" }],
+            "headline-md": ["22px", { "lineHeight": "32px", "fontWeight": "700" }],
+            "body-md": ["13px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "label-sm": ["10px", { "lineHeight": "14px", "fontWeight": "500" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "display-lg": ["40px", { "lineHeight": "52px", "fontWeight": "800" }],
+            "display-lg-mobile": ["30px", { "lineHeight": "40px", "fontWeight": "800" }],
+            "body-lg": ["15px", { "lineHeight": "26px", "fontWeight": "400" }],
+            "headline-sm": ["18px", { "lineHeight": "28px", "fontWeight": "600" }]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-surface text-on-surface font-body-md text-body-md flex flex-col min-h-screen relative antialiased selection:bg-primary-fixed selection:text-primary">
+<!-- TOP HEADER (Dynamic title/actions) -->
+<header class="fixed top-0 w-full z-40 bg-surface/85 backdrop-blur-xl border-b border-surface-container-high/60 pt-safe">
+<div class="h-16 px-margin flex items-center justify-between">
+<div class="flex items-center gap-space-sm" id="header-left-slot">
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-on-primary text-[18px]">person</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<h1 class="font-title-md text-title-md text-on-surface" id="app-header-title">ادمین‌یار</h1>
+<span class="material-symbols-outlined text-primary text-[16px] animate-spin-slow">auto_awesome</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant" id="app-header-subtitle">دستیار تخصصی اینستاگرام</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs" id="header-right-slot">
+<!-- Quick Back Button (Hidden on Home) -->
+<button class="hidden px-2.5 py-1.5 rounded-full bg-surface-container-high text-primary hover:bg-primary-fixed flex items-center gap-1 font-label-md transition-colors" id="header-back-btn" onclick="AdminApp.navigate('home')">
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+<span>بازگشت</span>
+</button>
+<button aria-label="اعلان‌ها" class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors relative" onclick="AdminApp.showToast('اعلان جدید: الگوریتم ریلز این هفته به ویدیوهای زیر ۲۵ ثانیه امتیاز مضاعف می‌دهد!')">
+<span class="material-symbols-outlined text-[22px]">notifications</span>
+<span class="absolute top-2 left-2 w-2 h-2 rounded-full bg-secondary"></span>
+</button>
+</div>
+</div>
+</header>
+<!-- MAIN APP CONTAINER -->
+<main class="flex-1 flex flex-col relative w-full pt-16 pb-28 px-margin-mobile bg-surface overflow-x-hidden">
+<!-- ================= VIEW 1: HOME ================= -->
+<div class="view-panel flex flex-col w-full gap-space-lg select-none" id="view-home">
+<!-- ۱. بخش خوشامدگویی و وضعیت اکانت اینستاگرام -->
+<section class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-md text-headline-md text-on-surface">سلام، ادمین خستگی‌ناپذیر!</span>
+<span class="text-[20px] animate-bounce">👋</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">آماده‌ای برای شلیک محتوای پربازدید امروز؟</p>
+</div>
+<!-- تصویر پروفایل اکانت اینستاگرام -->
+<div class="relative cursor-pointer" onclick="AdminApp.navigate('settings')">
+<div class="w-12 h-12 rounded-full p-[2px] bg-gradient-to-tr from-secondary-container via-tertiary-container to-primary-container shadow-md">
+<img class="w-full h-full rounded-full object-cover" data-alt="A trendy creative Iranian social media manager profile portrait, warm aesthetic studio lighting, cheerful expression with stylish modern violet tones in the background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBs5EGFdwzSXNM6zsLj5RiEu7ZmRpyjQtW-Ads6JMxm5yH7GhOswgpYyw_lhufFXUav9nS-A1CTHMDNREMfJX2rSYDqY7pk-In-LmgF65aUW0T10zVY0EoF2VMmYQH0oW4Hb9gMzDzkCOsYJdrJ3QLaN9fbfnDX6K2B2R-GCI1z-sIJ7ZuItETnXvyup65PYUABEUOx8MPLkK3MTRgStjN6Iyqjwyv-xH_jd7hTysk"/>
+</div>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-primary rounded-full border-2 border-surface flex items-center justify-center">
+<span class="w-1.5 h-1.5 bg-surface rounded-full animate-ping"></span>
+</span>
+</div>
+</div>
+<!-- کارت وضعیت پیج متصل شده -->
+<div class="w-full rounded-lg bg-surface-container-lowest p-space-md shadow-[0_4px_20px_-2px_rgba(109,40,217,0.06)] flex items-center justify-between transition-transform active:scale-[0.99] border border-surface-container/40">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-secondary-fixed text-[22px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-title-md text-title-md text-on-surface truncate" id="connected-page-label">پیج متصل: studio_brand@</span>
+</div>
+<div class="flex items-center gap-space-sm mt-0.5">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-on-secondary-fixed-variant bg-secondary-fixed px-2 py-0.5 rounded-full">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+                  هوش مصنوعی فعال
+                </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">تعامل: ۷.۴٪ (عالی)</span>
+</div>
+</div>
+</div>
+<button aria-label="تنظیمات اکانت" class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors shrink-0 active:rotate-180 duration-300" onclick="AdminApp.syncAccount(this)">
+<span class="material-symbols-outlined text-[18px]">sync</span>
+</button>
+</div>
+</section>
+<!-- ۲. کارت ویژه «ایده داغ امروز» (Hero Banner) -->
+<section class="relative overflow-hidden rounded-lg bg-gradient-to-br from-primary-container via-secondary-container to-tertiary-container p-space-lg text-on-primary shadow-xl">
+<div class="absolute -top-12 -left-12 w-36 h-36 bg-tertiary-fixed-dim/30 rounded-full blur-2xl pointer-events-none"></div>
+<div class="absolute -bottom-10 -right-10 w-32 h-32 bg-primary-fixed/20 rounded-full blur-xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="inline-flex items-center gap-space-xs bg-surface-container-lowest/20 backdrop-blur-md px-3 py-1 rounded-full text-on-primary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed animate-pulse">local_fire_department</span>
+<span>پیشنهاد ترند روز هوش مصنوعی</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary-fixed bg-surface-container-lowest/15 px-2 py-0.5 rounded-full">تعامل ۲.۵×</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<h2 class="font-headline-sm text-headline-sm text-on-primary leading-tight">چالش «یک روز کاری در ۳۰ ثانیه»</h2>
+<p class="font-body-md text-body-md text-primary-fixed-dim line-clamp-2">
+              پشت‌صحنه کارگاه یا میز کار به سبک ولاگ سریع (Quick Vlog) با برش‌های ۱ ثانیه‌ای و موزیک ضربی ترند این هفته. قلاب اول: «فکر می‌کردم کار ما آسونه تا اینکه...»
+            </p>
+</div>
+<div class="flex items-center gap-space-sm pt-space-xs">
+<button class="flex-1 bg-surface-container-lowest text-primary font-label-lg text-label-lg py-3 px-space-md rounded-full shadow-md flex items-center justify-center gap-space-xs transition-transform active:scale-95 hover:bg-white" id="btn-use-idea" onclick="AdminApp.openToolWithPreset('reels', 'چالش یک روز کاری در ۳۰ ثانیه با ولاگ پرانرژی')">
+<span class="material-symbols-outlined text-[18px]">auto_awesome</span>
+<span>استفاده از این ایده و سناریونویسی</span>
+</button>
+<button aria-label="نشان کردن ایده" class="w-11 h-11 bg-surface-container-lowest/20 backdrop-blur-md rounded-full flex items-center justify-center text-on-primary transition-transform active:scale-95 hover:bg-surface-container-lowest/30" onclick="AdminApp.toggleBookmarkHero(this)">
+<span class="material-symbols-outlined text-[20px]" id="hero-bookmark-icon">bookmark_border</span>
+</button>
+</div>
+</div>
+</section>
+<!-- ۳. گرید ابزارهای اصلی هوش مصنوعی (۲ در ۲) -->
+<section class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">apps</span>
+<h3 class="font-title-md text-title-md text-on-surface">جعبه‌ابزار تولید محتوا</h3>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">۴ دستیار آماده به‌کار</span>
+</div>
+<div class="grid grid-cols-2 gap-space-md">
+<!-- کارت ۱: کپشن‌ساز -->
+<div class="tool-card group relative flex flex-col justify-between rounded-lg bg-surface-container-lowest p-space-md shadow-[0_4px_20px_-2px_rgba(109,40,217,0.05)] hover:shadow-lg transition-all active:scale-[0.98] cursor-pointer overflow-hidden border border-surface-container/30" onclick="AdminApp.navigate('caption')">
+<div class="absolute -top-6 -left-6 w-16 h-16 bg-primary-fixed/30 rounded-full blur-lg pointer-events-none"></div>
+<div class="flex flex-col gap-space-sm relative z-10">
+<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center text-primary mb-1 shadow-sm">
+<span class="material-symbols-outlined text-[26px]">edit_note</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<h4 class="font-title-md text-title-md text-on-surface">کپشن‌ساز</h4>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">متن‌های تعاملی، ویروسی و هشتگ‌های پربازدید</p>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-md relative z-10">
+<span class="font-label-sm text-label-sm text-primary bg-surface-container-low px-2 py-0.5 rounded-full font-medium">نوشتن متن</span>
+<span class="material-symbols-outlined text-primary text-[18px] group-hover:-translate-x-1 transition-transform">arrow_back</span>
+</div>
+</div>
+<!-- کارت ۲: سناریونویس ریلز -->
+<div class="tool-card group relative flex flex-col justify-between rounded-lg bg-surface-container-lowest p-space-md shadow-[0_4px_20px_-2px_rgba(109,40,217,0.05)] hover:shadow-lg transition-all active:scale-[0.98] cursor-pointer overflow-hidden border border-surface-container/30" onclick="AdminApp.navigate('reels')">
+<div class="absolute -top-6 -left-6 w-16 h-16 bg-tertiary-fixed/30 rounded-full blur-lg pointer-events-none"></div>
+<div class="flex flex-col gap-space-sm relative z-10">
+<div class="w-12 h-12 rounded-full bg-tertiary-fixed flex items-center justify-center text-tertiary mb-1 shadow-sm">
+<span class="material-symbols-outlined text-[24px]">movie_filter</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<h4 class="font-title-md text-title-md text-on-surface">سناریوی ریلز</h4>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">قلاب‌های ۳ ثانیه‌ای و ایده‌های ویدیویی ترند</p>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-md relative z-10">
+<span class="font-label-sm text-label-sm text-tertiary bg-surface-container-low px-2 py-0.5 rounded-full font-medium">وایرال و ریلز</span>
+<span class="material-symbols-outlined text-tertiary text-[18px] group-hover:-translate-x-1 transition-transform">arrow_back</span>
+</div>
+</div>
+<!-- کارت ۳: برنامه‌ریز محتوا -->
+<div class="tool-card group relative flex flex-col justify-between rounded-lg bg-surface-container-lowest p-space-md shadow-[0_4px_20px_-2px_rgba(109,40,217,0.05)] hover:shadow-lg transition-all active:scale-[0.98] cursor-pointer overflow-hidden border border-surface-container/30" onclick="AdminApp.navigate('planner')">
+<div class="absolute -top-6 -left-6 w-16 h-16 bg-secondary-fixed/40 rounded-full blur-lg pointer-events-none"></div>
+<div class="flex flex-col gap-space-sm relative z-10">
+<div class="w-12 h-12 rounded-full bg-secondary-fixed flex items-center justify-center text-secondary mb-1 shadow-sm">
+<span class="material-symbols-outlined text-[24px]">calendar_month</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<h4 class="font-title-md text-title-md text-on-surface">برنامه‌ریز محتوا</h4>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">تقویم هوشمند زمان‌بندی و انتشار پست و استوری</p>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-md relative z-10">
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container-low px-2 py-0.5 rounded-full font-medium">تقویم منظم</span>
+<span class="material-symbols-outlined text-secondary text-[18px] group-hover:-translate-x-1 transition-transform">arrow_back</span>
+</div>
+</div>
+<!-- کارت ۴: پاسخ‌ساز کامنت -->
+<div class="tool-card group relative flex flex-col justify-between rounded-lg bg-surface-container-lowest p-space-md shadow-[0_4px_20px_-2px_rgba(109,40,217,0.05)] hover:shadow-lg transition-all active:scale-[0.98] cursor-pointer overflow-hidden border border-surface-container/30" onclick="AdminApp.navigate('responder')">
+<div class="absolute -top-6 -left-6 w-16 h-16 bg-surface-variant/60 rounded-full blur-lg pointer-events-none"></div>
+<div class="flex flex-col gap-space-sm relative z-10">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center text-primary mb-1 shadow-sm">
+<span class="material-symbols-outlined text-[24px]">mark_chat_unread</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<h4 class="font-title-md text-title-md text-on-surface">پاسخ‌ساز کامنت</h4>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">پاسخ‌های خودکار، صمیمی و فروشنده به دایرکت‌ها</p>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-md relative z-10">
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container-low px-2 py-0.5 rounded-full font-medium">پاسخ هوشمند</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px] group-hover:-translate-x-1 transition-transform">arrow_back</span>
+</div>
+</div>
+</div>
+</section>
+<!-- ۴. پیش‌نویس‌های اخیر و وضعیت برنامه‌ریزی هفته -->
+<section class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">history_edu</span>
+<h3 class="font-title-md text-title-md text-on-surface">پیش‌نویس‌های در جریان</h3>
+</div>
+<button class="font-label-md text-label-md text-primary font-medium hover:underline" onclick="AdminApp.showToast('آرشیو کامل پیش‌نویس‌ها بارگذاری شد.')">مشاهده همه</button>
+</div>
+<div class="flex flex-col gap-space-sm">
+<!-- پیش‌نویس ۱ -->
+<div class="flex items-center gap-space-md p-space-md rounded-lg bg-surface-container-lowest shadow-[0_2px_8px_rgba(0,0,0,0.03)] border border-surface-container/40 active:scale-[0.99] transition-transform">
+<div class="w-14 h-14 rounded-DEFAULT bg-surface-container overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="An Instagram reel video thumbnail showcasing a creative workspace layout with colorful design moodboards, camera gear and warm cozy studio lamp" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_UdloP_vIaEqrWnonYyJ0RMMoCCCr08U7Xva_m4I--z3JuKTf3vYK3rrJXYieT3vpnQGXQlqlTTDOaclDlKNs9zKJ4cW5yg_-Ei7mma1oWNwEc_91gNB2e2IJU7aRL5UQ0I5z49StLcbbVFfGjd3-l53ZMtDIHoEdR9IpdQpcsqSaypBIjw2eLdlfsaX1ClvSp2RByUCJs6D_dRNQt33MZsHfA4FUnW4GuY5kd14"/>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary bg-secondary-fixed px-2 py-0.5 rounded-full">ریلز تصویری</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">امروز، ۱۸:۳۰</span>
+</div>
+<span class="font-title-md text-title-md text-on-surface truncate mt-1">۵ اشتباه مهلک در الگوریتم اکسپلور ۲۰۲۵</span>
+<p class="font-body-md text-body-md text-on-surface-variant truncate">سناریو و قلاب بازنویسی شده با هوش مصنوعی...</p>
+</div>
+<button aria-label="ویرایش پیش‌نویس" class="w-9 h-9 rounded-full bg-surface-container-low flex items-center justify-center text-primary shrink-0 hover:bg-primary-fixed transition-colors" onclick="AdminApp.openToolWithPreset('reels', '۵ اشتباه مهلک در الگوریتم اکسپلور ۲۰۲۵')">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</div>
+<!-- پیش‌نویس ۲ -->
+<div class="flex items-center gap-space-md p-space-md rounded-lg bg-surface-container-lowest shadow-[0_2px_8px_rgba(0,0,0,0.03)] border border-surface-container/40 active:scale-[0.99] transition-transform">
+<div class="w-14 h-14 rounded-DEFAULT bg-surface-container overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="Minimalist Instagram carousel post mockup with sleek typography, abstract violet geometry and modern aesthetic branding elements" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYgC-U7B4Tby4QKBjCkocV2O6knoyZqAWLIaGLuggNXe8MBZricGU4xJVeq0cbJfti8sQ9ui4FFU8z8FAnS7bVoPwh1sGQrsJys4KrDJ6wH81eiVRT0mtuOPky1FJyJmMGs0w8QY_n6gW-s3T13H_ODRv4AH2TMm0X_B_wAU2oJnSXOtS7NIH-0Ka78xSMKvzdYETnXhHAQz2E0TDxIx-Bz1__X9OGKguHVdEiK6g"/>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-tertiary bg-tertiary-fixed px-2 py-0.5 rounded-full">پست کاروسل</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">فردا، ساعت ۱۲</span>
+</div>
+<span class="font-title-md text-title-md text-on-surface truncate mt-1">ترفندهای افزایش فروش از استوری</span>
+<p class="font-body-md text-body-md text-on-surface-variant truncate">کپشن شامل ۴۵۰ کاراکتر و ۱۵ هشتگ پربازدید</p>
+</div>
+<button aria-label="ویرایش پیش‌نویس" class="w-9 h-9 rounded-full bg-surface-container-low flex items-center justify-center text-primary shrink-0 hover:bg-primary-fixed transition-colors" onclick="AdminApp.openToolWithPreset('caption', 'ترفندهای افزایش فروش از استوری و تبدیل بازدیدکننده به خریدار')">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</div>
+</div>
+</section>
+<!-- کپسول انگیزه روزانه در انتهای صفحه -->
+<div class="flex items-center justify-center gap-space-xs p-space-md rounded-lg bg-surface-container-low text-on-surface-variant text-center border border-surface-container/40">
+<span class="material-symbols-outlined text-secondary text-[20px]">lightbulb</span>
+<span class="font-label-md text-label-md">پیوستگی در انتشار مهم‌تر از کمال‌گرایی است؛ همین امروز یک قدم بردار! ✨</span>
+</div>
+</div>
+<!-- ================= VIEW 2: CAPTION GENERATOR ================= -->
+<div class="view-panel hidden flex flex-col w-full gap-space-lg" id="view-caption">
+<div class="flex items-center justify-between border-b border-surface-container-high/70 pb-3">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">edit_note</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">کپشن‌ساز هوشمند اینستاگرام</h2>
+<p class="font-label-md text-label-md text-on-surface-variant">متن جذاب، ساختار اصولی، قلاب و هشتگ‌های گلچین</p>
+</div>
+</div>
+<button class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary" onclick="AdminApp.navigate('home')">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- فرم ورودی کپشن -->
+<div class="flex flex-col gap-space-md rounded-lg bg-surface-container-lowest p-space-md shadow-[0_4px_20px_-2px_rgba(109,40,217,0.04)] border border-surface-container/60">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-lg text-label-lg text-on-surface font-semibold flex items-center justify-between">
+<span>موضوع پست یا محصول شما چیه؟ <span class="text-error">*</span></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">الزامی</span>
+</label>
+<div class="relative">
+<textarea class="w-full rounded-DEFAULT border border-outline-variant bg-surface/50 p-3 text-body-md focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all placeholder:text-outline" id="caption-input-topic" placeholder="مثال: معرفی کیف چرمی دست‌دوز جدید با تخفیف ۲۰ درصدی آخر فصل..." rows="3"></textarea>
+<div class="hidden text-error font-label-sm text-label-sm mt-1 flex items-center gap-1" id="caption-error-text">
+<span class="material-symbols-outlined text-[14px]">error</span>
+<span>لطفاً ابتدا موضوع یا متن را وارد کنید</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface-variant">لحن گفتار:</label>
+<select class="rounded-DEFAULT border border-outline-variant bg-surface/50 p-2 text-label-md focus:border-primary outline-none" id="caption-tone">
+<option value="صمیمی و پرانرژی">صمیمی و پرانرژی 🔥</option>
+<option value="حرفه‌ای و معتبر">حرفه‌ای و معتبر 👔</option>
+<option value="کنجکاوکننده و چالشی">کنجکاوکننده و چالشی 🤔</option>
+<option value="احساسی و داستانی">احساسی و داستانی ✨</option>
+</select>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface-variant">هدف پست (Call To Action):</label>
+<select class="rounded-DEFAULT border border-outline-variant bg-surface/50 p-2 text-label-md focus:border-primary outline-none" id="caption-cta">
+<option value="کامنت گذاشتن و بحث">گرفتن کامنت و تعامل</option>
+<option value="فروش مستقیم و دایرکت">فروش و هدایت به دایرکت</option>
+<option value="سیو و اشتراک‌گذاری">سیو کردن برای بعد</option>
+</select>
+</div>
+</div>
+<button class="w-full bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg py-3.5 rounded-full shadow-md flex items-center justify-center gap-space-xs transition-all active:scale-[0.98]" id="btn-generate-caption" onclick="AdminApp.generateCaption()">
+<span class="material-symbols-outlined text-[20px]">auto_awesome</span>
+<span>ساخت کپشن هوشمند</span>
+</button>
+</div>
+<!-- کادر خروجی نتیجه -->
+<div class="hidden flex flex-col gap-space-sm rounded-lg bg-surface-container-lowest p-space-md shadow-md border border-primary/20" id="caption-result-container">
+<div class="flex items-center justify-between pb-2 border-b border-surface-container">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
+<span class="font-label-md text-label-md font-bold text-on-surface">کپشن آماده انتشار</span>
+<span class="font-label-sm text-label-sm text-primary bg-primary-fixed px-2 py-0.5 rounded-full" id="caption-badge">الگوریتم تعاملی</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="p-1.5 rounded-full text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" id="btn-edit-caption" onclick="AdminApp.toggleEditResult('caption')" title="ویرایش متن">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed-variant hover:bg-primary hover:text-on-primary font-label-sm text-label-sm flex items-center gap-1 transition-all" onclick="AdminApp.copyTextFromElement('caption-result-text')">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+<span>کپی متن</span>
+</button>
+</div>
+</div>
+<div class="bg-surface-container-low/60 rounded-DEFAULT p-space-md text-on-surface leading-relaxed text-body-md font-body-md whitespace-pre-line select-text border border-surface-container" id="caption-display-box">
+<span id="caption-result-text"></span>
+</div>
+<!-- حالت ادیت درون‌خطی -->
+<div class="hidden flex flex-col gap-2" id="caption-edit-box">
+<textarea class="w-full rounded-DEFAULT border border-primary bg-surface p-3 text-body-md focus:ring-2 focus:ring-primary/20 outline-none" id="caption-editable-textarea" rows="8"></textarea>
+<div class="flex items-center justify-end gap-2">
+<button class="px-3 py-1.5 rounded-full text-on-surface-variant font-label-md" onclick="AdminApp.cancelEditResult('caption')">انصراف</button>
+<button class="px-4 py-1.5 rounded-full bg-primary text-on-primary font-label-md shadow-sm" onclick="AdminApp.saveEditResult('caption')">ذخیره تغییرات</button>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant">تولید شده توسط الگوریتم هوشمند محلی ادمین‌یار</span>
+<button class="text-primary font-label-md text-label-md flex items-center gap-1 hover:underline" onclick="AdminApp.regenerateCaption()">
+<span class="material-symbols-outlined text-[16px]">refresh</span>
+<span>ساخت دوباره (تنوع متن)</span>
+</button>
+</div>
+</div>
+</div>
+<!-- ================= VIEW 3: REELS SCRIPTWRITER ================= -->
+<div class="view-panel hidden flex flex-col w-full gap-space-lg" id="view-reels">
+<div class="flex items-center justify-between border-b border-surface-container-high/70 pb-3">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[24px]">movie_filter</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">سناریونویس حرفه‌ای ریلز</h2>
+<p class="font-label-md text-label-md text-on-surface-variant">قلاب ۳ ثانیه‌ای اول، متن صحنه به صحنه، و دعوت به اقدام</p>
+</div>
+</div>
+<button class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary" onclick="AdminApp.navigate('home')">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="flex flex-col gap-space-md rounded-lg bg-surface-container-lowest p-space-md shadow-[0_4px_20px_-2px_rgba(109,40,217,0.04)] border border-surface-container/60">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-lg text-label-lg text-on-surface font-semibold flex items-center justify-between">
+<span>ایده یا موضوع ویدیو ریلز: <span class="text-error">*</span></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">الزامی</span>
+</label>
+<div class="relative">
+<textarea class="w-full rounded-DEFAULT border border-outline-variant bg-surface/50 p-3 text-body-md focus:border-tertiary focus:ring-2 focus:ring-tertiary/20 outline-none transition-all placeholder:text-outline" id="reels-input-topic" placeholder="مثال: ۳ ترفند نورپردازی ویدیو با موبایل در خانه بدون تجهیزات گران قیمت..." rows="3"></textarea>
+<div class="hidden text-error font-label-sm text-label-sm mt-1 flex items-center gap-1" id="reels-error-text">
+<span class="material-symbols-outlined text-[14px]">error</span>
+<span>لطفاً ابتدا موضوع یا متن را وارد کنید</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface-variant">طول ویدیو ریلز:</label>
+<select class="rounded-DEFAULT border border-outline-variant bg-surface/50 p-2 text-label-md focus:border-tertiary outline-none" id="reels-duration">
+<option value="۱۵ ثانیه (سریع و وایرال)">۱۵ ثانیه (وایرال سریع) ⚡</option>
+<option selected="" value="۳۰ ثانیه (آموزشی فشرده)">۳۰ ثانیه (استاندارد)</option>
+<option value="۶۰ ثانیه (ولاگ و داستانی)">۶۰ ثانیه (داستان‌محور)</option>
+</select>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface-variant">سبک فیلمبرداری:</label>
+<select class="rounded-DEFAULT border border-outline-variant bg-surface/50 p-2 text-label-md focus:border-tertiary outline-none" id="reels-style">
+<option value="صحبت مستقیم با دوربین (Talking Head)">صحبت مستقیم با دوربین</option>
+<option value="تصاویر سریع متنی (B-roll + متن)">بی‌رول و ترنزیشن سریع</option>
+<option value="ولاگ روزمرگی و پشت صحنه">ولاگ و پشت‌صحنه کارگاه</option>
+</select>
+</div>
+</div>
+<button class="w-full bg-tertiary hover:bg-tertiary-container text-on-tertiary font-label-lg text-label-lg py-3.5 rounded-full shadow-md flex items-center justify-center gap-space-xs transition-all active:scale-[0.98]" id="btn-generate-reels" onclick="AdminApp.generateReels()">
+<span class="material-symbols-outlined text-[20px]">movie_filter</span>
+<span>تولید سناریو و قلاب ریلز</span>
+</button>
+</div>
+<!-- کادر نمایش سناریو -->
+<div class="hidden flex flex-col gap-space-sm rounded-lg bg-surface-container-lowest p-space-md shadow-md border border-tertiary/20" id="reels-result-container">
+<div class="flex items-center justify-between pb-2 border-b border-surface-container">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-rose-500 animate-ping"></span>
+<span class="font-title-md text-title-md font-bold text-on-surface">فیلم‌نامه آماده ضبط</span>
+<span class="font-label-sm text-label-sm text-tertiary bg-tertiary-fixed px-2 py-0.5 rounded-full" id="reels-badge">قلاب تست شده</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="p-1.5 rounded-full text-on-surface-variant hover:text-tertiary hover:bg-surface-container transition-colors" onclick="AdminApp.toggleEditResult('reels')" title="ویرایش سناریو">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant hover:bg-tertiary hover:text-on-tertiary font-label-sm text-label-sm flex items-center gap-1 transition-all" onclick="AdminApp.copyTextFromElement('reels-result-text')">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+<span>کپی سناریو</span>
+</button>
+</div>
+</div>
+<div class="bg-surface-container-low/60 rounded-DEFAULT p-space-md text-on-surface leading-relaxed text-body-md font-body-md whitespace-pre-line select-text border border-surface-container" id="reels-display-box">
+<span id="reels-result-text"></span>
+</div>
+<!-- حالت ادیت درون‌خطی ریلز -->
+<div class="hidden flex flex-col gap-2" id="reels-edit-box">
+<textarea class="w-full rounded-DEFAULT border border-tertiary bg-surface p-3 text-body-md focus:ring-2 focus:ring-tertiary/20 outline-none" id="reels-editable-textarea" rows="9"></textarea>
+<div class="flex items-center justify-end gap-2">
+<button class="px-3 py-1.5 rounded-full text-on-surface-variant font-label-md" onclick="AdminApp.cancelEditResult('reels')">انصراف</button>
+<button class="px-4 py-1.5 rounded-full bg-tertiary text-on-tertiary font-label-md shadow-sm" onclick="AdminApp.saveEditResult('reels')">ذخیره تغییرات</button>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant">تولید شده توسط الگوریتم هوشمند محلی ادمین‌یار</span>
+<button class="text-tertiary font-label-md text-label-md flex items-center gap-1 hover:underline" onclick="AdminApp.regenerateReels()">
+<span class="material-symbols-outlined text-[16px]">refresh</span>
+<span>قلاب دیگر (پیشنهاد دوم)</span>
+</button>
+</div>
+</div>
+</div>
+<!-- ================= VIEW 4: CONTENT PLANNER ================= -->
+<div class="view-panel hidden flex flex-col w-full gap-space-lg" id="view-planner">
+<div class="flex items-center justify-between border-b border-surface-container-high/70 pb-3">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[24px]">calendar_month</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">برنامه‌ریز و تقویم محتوایی</h2>
+<p class="font-label-md text-label-md text-on-surface-variant">برنامه‌ریزی هدفمند برای پست‌ها و استوری‌های هفتگی</p>
+</div>
+</div>
+<button class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary" onclick="AdminApp.navigate('home')">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="flex flex-col gap-space-md rounded-lg bg-surface-container-lowest p-space-md shadow-[0_4px_20px_-2px_rgba(109,40,217,0.04)] border border-surface-container/60">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-lg text-label-lg text-on-surface font-semibold flex items-center justify-between">
+<span>حوزه کاری یا موضوع هفته: <span class="text-error">*</span></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">الزامی</span>
+</label>
+<div class="relative">
+<input class="w-full rounded-DEFAULT border border-outline-variant bg-surface/50 p-3 text-body-md focus:border-secondary focus:ring-2 focus:ring-secondary/20 outline-none transition-all placeholder:text-outline" id="planner-input-topic" placeholder="مثال: فروشگاه آنلاین پوشاک زنانه، کافه رستوران، آموزش زبان..." type="text"/>
+<div class="hidden text-error font-label-sm text-label-sm mt-1 flex items-center gap-1" id="planner-error-text">
+<span class="material-symbols-outlined text-[14px]">error</span>
+<span>لطفاً ابتدا موضوع یا حوزه کاری را وارد کنید</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface-variant">تعداد روزهای برنامه:</label>
+<select class="rounded-DEFAULT border border-outline-variant bg-surface/50 p-2 text-label-md focus:border-secondary outline-none" id="planner-days">
+<option value="۳ روز (برنامه فشرده)">۳ روز در هفته</option>
+<option selected="" value="۵ روز (رشد پیوسته)">۵ روز در هفته (پیشنهادی)</option>
+<option value="۷ روز (برنامه کامل)">تمام روزهای هفته</option>
+</select>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface-variant">تمرکز اصلی این هفته:</label>
+<select class="rounded-DEFAULT border border-outline-variant bg-surface/50 p-2 text-label-md focus:border-secondary outline-none" id="planner-goal">
+<option value="افزایش تعامل و فالوور">افزایش تعامل و فالوور</option>
+<option value="فروش کمپین و تخفیف">فروش کمپینی و جشنواره</option>
+<option value="اعتمادسازی و برندینگ">اعتمادسازی و معرفی تیم</option>
+</select>
+</div>
+</div>
+<button class="w-full bg-secondary hover:bg-secondary-container text-on-secondary font-label-lg text-label-lg py-3.5 rounded-full shadow-md flex items-center justify-center gap-space-xs transition-all active:scale-[0.98]" id="btn-generate-planner" onclick="AdminApp.generatePlanner()">
+<span class="material-symbols-outlined text-[20px]">calendar_month</span>
+<span>ساخت برنامه محتوایی هوشمند</span>
+</button>
+</div>
+<!-- کادر نمایش برنامه -->
+<div class="hidden flex flex-col gap-space-sm rounded-lg bg-surface-container-lowest p-space-md shadow-md border border-secondary/20" id="planner-result-container">
+<div class="flex items-center justify-between pb-2 border-b border-surface-container">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-purple-500 animate-ping"></span>
+<span class="font-title-md text-title-md font-bold text-on-surface">تقویم تولید محتوای هفته</span>
+<span class="font-label-sm text-label-sm text-secondary bg-secondary-fixed px-2 py-0.5 rounded-full" id="planner-badge">زمان‌بندی دقیق</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="p-1.5 rounded-full text-on-surface-variant hover:text-secondary hover:bg-surface-container transition-colors" onclick="AdminApp.toggleEditResult('planner')" title="ویرایش تقویم">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant hover:bg-secondary hover:text-on-secondary font-label-sm text-label-sm flex items-center gap-1 transition-all" onclick="AdminApp.copyTextFromElement('planner-result-text')">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+<span>کپی کل برنامه</span>
+</button>
+</div>
+</div>
+<div class="bg-surface-container-low/60 rounded-DEFAULT p-space-md text-on-surface leading-relaxed text-body-md font-body-md whitespace-pre-line select-text border border-surface-container" id="planner-display-box">
+<span id="planner-result-text"></span>
+</div>
+<div class="hidden flex flex-col gap-2" id="planner-edit-box">
+<textarea class="w-full rounded-DEFAULT border border-secondary bg-surface p-3 text-body-md focus:ring-2 focus:ring-secondary/20 outline-none" id="planner-editable-textarea" rows="10"></textarea>
+<div class="flex items-center justify-end gap-2">
+<button class="px-3 py-1.5 rounded-full text-on-surface-variant font-label-md" onclick="AdminApp.cancelEditResult('planner')">انصراف</button>
+<button class="px-4 py-1.5 rounded-full bg-secondary text-on-secondary font-label-md shadow-sm" onclick="AdminApp.saveEditResult('planner')">ذخیره تغییرات</button>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant">تولید شده توسط الگوریتم هوشمند محلی ادمین‌یار</span>
+<button class="text-secondary font-label-md text-label-md flex items-center gap-1 hover:underline" onclick="AdminApp.regeneratePlanner()">
+<span class="material-symbols-outlined text-[16px]">refresh</span>
+<span>ایده‌پردازی مجدد برنامه</span>
+</button>
+</div>
+</div>
+</div>
+<!-- ================= VIEW 5: COMMENT RESPONDER ================= -->
+<div class="view-panel hidden flex flex-col w-full gap-space-lg" id="view-responder">
+<div class="flex items-center justify-between border-b border-surface-container-high/70 pb-3">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">mark_chat_unread</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">دستیار هوشمند پاسخ به کامنت و دایرکت</h2>
+<p class="font-label-md text-label-md text-on-surface-variant">تبدیل مخاطب سرد به خریدار وفادار با پاسخ‌های جذاب</p>
+</div>
+</div>
+<button class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary" onclick="AdminApp.navigate('home')">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="flex flex-col gap-space-md rounded-lg bg-surface-container-lowest p-space-md shadow-[0_4px_20px_-2px_rgba(109,40,217,0.04)] border border-surface-container/60">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-lg text-label-lg text-on-surface font-semibold flex items-center justify-between">
+<span>متن کامنت یا پیام مخاطب: <span class="text-error">*</span></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">الزامی</span>
+</label>
+<div class="relative">
+<textarea class="w-full rounded-DEFAULT border border-outline-variant bg-surface/50 p-3 text-body-md focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all placeholder:text-outline" id="responder-input-text" placeholder="مثال: قیمت چنده؟ آیا ارسال به شهرستان هم دارین؟ یا: خیلی گرونه بابا ارزش نداره!" rows="3"></textarea>
+<div class="hidden text-error font-label-sm text-label-sm mt-1 flex items-center gap-1" id="responder-error-text">
+<span class="material-symbols-outlined text-[14px]">error</span>
+<span>لطفاً ابتدا متن پیام یا کامنت را وارد کنید</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface-variant">استراتژی پاسخ:</label>
+<select class="rounded-DEFAULT border border-outline-variant bg-surface/50 p-2 text-label-md focus:border-primary outline-none" id="responder-tone">
+<option value="صمیمی و هدایت به دایرکت">صمیمی + هدایت به دایرکت 💬</option>
+<option value="رفع ابهام و فروشنده">رفع ابهام قیمت و ترغیب به خرید 🛍️</option>
+<option value="پاسخ کوتاه و مودبانه">کوتاه و رسمی 🤝</option>
+<option value="پاسخ هوشمندانه به انتقاد">مدیریت اعتراض و لحن مثبت 🛡️</option>
+</select>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface-variant">افزودن ایموجی و صمیمیت:</label>
+<select class="rounded-DEFAULT border border-outline-variant bg-surface/50 p-2 text-label-md focus:border-primary outline-none" id="responder-emoji">
+<option value="مناسب و گرم">ایموجی‌های صمیمی و دوستانه</option>
+<option value="حداقلی و جدی">ساده و متین</option>
+</select>
+</div>
+</div>
+<button class="w-full bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg py-3.5 rounded-full shadow-md flex items-center justify-center gap-space-xs transition-all active:scale-[0.98]" id="btn-generate-responder" onclick="AdminApp.generateResponder()">
+<span class="material-symbols-outlined text-[20px]">mark_chat_unread</span>
+<span>پیشنهاد پاسخ هوشمند</span>
+</button>
+</div>
+<!-- کادر نتیجه پاسخ‌ها -->
+<div class="hidden flex flex-col gap-space-sm rounded-lg bg-surface-container-lowest p-space-md shadow-md border border-primary/20" id="responder-result-container">
+<div class="flex items-center justify-between pb-2 border-b border-surface-container">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-teal-500 animate-ping"></span>
+<span class="font-title-md text-title-md font-bold text-on-surface">پاسخ‌های پیشنهادی الگوریتم</span>
+<span class="font-label-sm text-label-sm text-primary bg-primary-fixed px-2 py-0.5 rounded-full" id="responder-badge">تعامل بالا</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="p-1.5 rounded-full text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" onclick="AdminApp.toggleEditResult('responder')" title="ویرایش پاسخ">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed-variant hover:bg-primary hover:text-on-primary font-label-sm text-label-sm flex items-center gap-1 transition-all" onclick="AdminApp.copyTextFromElement('responder-result-text')">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+<span>کپی پاسخ</span>
+</button>
+</div>
+</div>
+<div class="bg-surface-container-low/60 rounded-DEFAULT p-space-md text-on-surface leading-relaxed text-body-md font-body-md whitespace-pre-line select-text border border-surface-container" id="responder-display-box">
+<span id="responder-result-text"></span>
+</div>
+<div class="hidden flex flex-col gap-2" id="responder-edit-box">
+<textarea class="w-full rounded-DEFAULT border border-primary bg-surface p-3 text-body-md focus:ring-2 focus:ring-primary/20 outline-none" id="responder-editable-textarea" rows="7"></textarea>
+<div class="flex items-center justify-end gap-2">
+<button class="px-3 py-1.5 rounded-full text-on-surface-variant font-label-md" onclick="AdminApp.cancelEditResult('responder')">انصراف</button>
+<button class="px-4 py-1.5 rounded-full bg-primary text-on-primary font-label-md shadow-sm" onclick="AdminApp.saveEditResult('responder')">ذخیره تغییرات</button>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant">تولید شده توسط الگوریتم هوشمند محلی ادمین‌یار</span>
+<button class="text-primary font-label-md text-label-md flex items-center gap-1 hover:underline" onclick="AdminApp.regenerateResponder()">
+<span class="material-symbols-outlined text-[16px]">refresh</span>
+<span>پاسخ دیگر (لحن متفاوت)</span>
+</button>
+</div>
+</div>
+</div>
+<!-- ================= VIEW 6: SETTINGS ================= -->
+<div class="view-panel hidden flex flex-col w-full gap-space-lg select-none" id="view-settings">
+<div class="flex items-center justify-between border-b border-surface-container-high/70 pb-3">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">settings</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">تنظیمات ادمین‌یار</h2>
+<p class="font-label-md text-label-md text-on-surface-variant">مدیریت اکانت، سهمیه روزانه هوش مصنوعی و ترجیحات</p>
+</div>
+</div>
+<button class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary" onclick="AdminApp.navigate('home')">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- وضعیت سهمیه هوش مصنوعی -->
+<div class="p-space-md rounded-lg bg-gradient-to-r from-primary-fixed to-secondary-fixed/50 border border-primary/20 flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-title-md text-on-primary-fixed font-bold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[20px]">offline_bolt</span>
+            سهمیه پردازش هوشمند امروز
+          </span>
+<span class="font-label-sm text-label-sm bg-primary text-on-primary px-2.5 py-0.5 rounded-full font-bold">نامحدود ویژه</span>
+</div>
+<p class="font-body-md text-body-md text-on-primary-fixed/80">
+          تمامی درخواست‌های شما بدون نیاز به اتصال خارجی و از طریق موتور محلی هوشمند تولید محتوا انجام می‌شود.
+        </p>
+<div class="w-full bg-surface-container-lowest/80 h-2.5 rounded-full overflow-hidden mt-1">
+<div class="bg-primary h-full w-[88%] rounded-full"></div>
+</div>
+<div class="flex justify-between text-[11px] text-on-primary-fixed font-medium">
+<span>مصرف امروز: ۱۲ سناریو و کپشن</span>
+<span>سرعت پاسخ‌دهی: آنی (زیر ۱ ثانیه)</span>
+</div>
+</div>
+<!-- تنظیمات پیج و اتصال -->
+<div class="flex flex-col gap-3 rounded-lg bg-surface-container-lowest p-space-md border border-surface-container/60 shadow-sm">
+<h3 class="font-title-md text-title-md text-on-surface font-bold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[20px] text-primary">link</span>
+          اکانت اینستاگرام متصل
+        </h3>
+<div class="flex items-center justify-between p-3 rounded-DEFAULT bg-surface-container-low">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">@</div>
+<div>
+<div class="font-label-lg text-label-lg font-bold text-on-surface">studio_brand</div>
+<div class="font-label-sm text-label-sm text-emerald-600 font-medium flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                وضعیت: فعال و همگام
+              </div>
+</div>
+</div>
+<button class="px-3 py-1 rounded-full text-primary border border-primary/30 hover:bg-primary-fixed font-label-sm text-label-sm transition-colors" onclick="AdminApp.switchInstagramAccount()">
+            تغییر پیج
+          </button>
+</div>
+<div class="flex items-center justify-between py-2 border-t border-surface-container text-body-md">
+<span>حالت صرفه‌جویی و پاسخ خودکار:</span>
+<input checked="" class="w-5 h-5 rounded text-primary focus:ring-primary accent-primary cursor-pointer" type="checkbox"/>
+</div>
+<div class="flex items-center justify-between py-2 border-t border-surface-container text-body-md">
+<span>تحلیل الگوریتم با هشتگ‌های ترند روز:</span>
+<input checked="" class="w-5 h-5 rounded text-primary focus:ring-primary accent-primary cursor-pointer" type="checkbox"/>
+</div>
+</div>
+<!-- گزینه‌های دیگر -->
+<div class="flex flex-col gap-2 rounded-lg bg-surface-container-lowest p-space-md border border-surface-container/60 shadow-sm">
+<button class="w-full flex items-center justify-between py-2.5 text-on-surface hover:text-primary transition-colors text-right" onclick="AdminApp.showToast('تمام حافظه موقت محلی با موفقیت پاکسازی شد')">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant">cached</span>
+<span>پاکسازی حافظه موقت قالب‌ها</span>
+</span>
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="w-full flex items-center justify-between py-2.5 text-on-surface hover:text-primary transition-colors text-right border-t border-surface-container" onclick="AdminApp.showToast('شما از آخرین نسخه ۲.۴ ادمین‌یار استفاده می‌کنید.')">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant">info</span>
+<span>درباره ادمین‌یار و نسخه برنامه</span>
+</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">v2.4.0</span>
+</button>
+</div>
+</div>
+</main>
+<!-- ================= MODAL / BOTTOM SHEET: TOOLS ================= -->
+<div class="fixed inset-0 bg-black/40 z-50 backdrop-blur-sm hidden transition-opacity" id="tools-modal-backdrop" onclick="AdminApp.closeToolsSheet()"></div>
+<div class="fixed bottom-0 inset-x-0 bg-surface rounded-t-xl z-50 p-space-lg max-h-[85vh] overflow-y-auto transform translate-y-full transition-transform duration-300 shadow-2xl border-t border-surface-container" id="tools-modal-sheet">
+<div class="w-12 h-1.5 bg-surface-container-highest rounded-full mx-auto mb-4"></div>
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[24px]">auto_fix_high</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">جعبه‌ابزار سریع ادمین‌یار</h3>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant" onclick="AdminApp.closeToolsSheet()">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<div class="grid grid-cols-1 gap-2.5">
+<div class="p-3.5 rounded-DEFAULT bg-surface-container-lowest hover:bg-surface-container-low border border-surface-container flex items-center justify-between cursor-pointer transition-all active:scale-[0.99]" onclick="AdminApp.selectToolAndClose('caption')">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-fixed text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">edit_note</span>
+</div>
+<div>
+<div class="font-title-md text-title-md text-on-surface">کپشن‌ساز هوشمند</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">تولید کپشن‌های وایرال با هشتگ و قلاب</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary text-[20px]">arrow_back</span>
+</div>
+<div class="p-3.5 rounded-DEFAULT bg-surface-container-lowest hover:bg-surface-container-low border border-surface-container flex items-center justify-between cursor-pointer transition-all active:scale-[0.99]" onclick="AdminApp.selectToolAndClose('reels')">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">movie_filter</span>
+</div>
+<div>
+<div class="font-title-md text-title-md text-on-surface">سناریوی ریلز و ویدیو</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">طراحی پلان، قلاب ۳ ثانیه‌ای اول و صداگذاری</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-tertiary text-[20px]">arrow_back</span>
+</div>
+<div class="p-3.5 rounded-DEFAULT bg-surface-container-lowest hover:bg-surface-container-low border border-surface-container flex items-center justify-between cursor-pointer transition-all active:scale-[0.99]" onclick="AdminApp.selectToolAndClose('planner')">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">calendar_month</span>
+</div>
+<div>
+<div class="font-title-md text-title-md text-on-surface">برنامه‌ریز و تقویم هفتگی</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">تقویم جامع انتشار استوری و پست با ساعات طلایی</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-secondary text-[20px]">arrow_back</span>
+</div>
+<div class="p-3.5 rounded-DEFAULT bg-surface-container-lowest hover:bg-surface-container-low border border-surface-container flex items-center justify-between cursor-pointer transition-all active:scale-[0.99]" onclick="AdminApp.selectToolAndClose('responder')">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-high text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">mark_chat_unread</span>
+</div>
+<div>
+<div class="font-title-md text-title-md text-on-surface">پاسخ‌ساز دایرکت و کامنت</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">پاسخ‌های فروشنده و صمیمی به انواع مخاطب</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary text-[20px]">arrow_back</span>
+</div>
+</div>
+</div>
+<!-- ================= FLOATING TOAST NOTIFICATION ================= -->
+<div class="fixed top-20 left-1/2 -translate-x-1/2 z-50 max-w-[90vw] px-4 py-2.5 rounded-full bg-inverse-surface text-inverse-on-surface shadow-2xl font-label-md text-label-md flex items-center gap-2 pointer-events-none opacity-0 translate-y-2 transition-all duration-300" id="toast-notification">
+<span class="material-symbols-outlined text-[18px] text-emerald-400">check_circle</span>
+<span id="toast-text">✓ با موفقیت کپی شد! آماده انتشار در اینستاگرام</span>
+</div>
+<!-- ================= BOTTOM NAVIGATION BAR ================= -->
+<nav class="fixed bottom-0 w-full z-40 pb-safe bg-surface/90 backdrop-blur-xl border-t border-surface-container-high/60 shadow-[0_-4px_24px_rgba(109,40,217,0.08)]">
+<div class="h-20 px-space-lg flex items-center justify-around">
+<!-- تب ۱: خانه -->
+<button aria-current="page" class="tab-item flex flex-col items-center justify-center gap-space-xs min-w-[64px] min-h-[44px] transition-all tab-active" id="nav-btn-home" onclick="AdminApp.navigate('home')">
+<div class="w-14 h-8 rounded-full flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant text-[24px]">home</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant transition-colors">خانه</span>
+</button>
+<!-- تب ۲: ابزارها -->
+<button class="tab-item flex flex-col items-center justify-center gap-space-xs min-w-[64px] min-h-[44px] transition-all" id="nav-btn-tools" onclick="AdminApp.openToolsSheet()">
+<div class="w-14 h-8 rounded-full flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant text-[24px]">auto_fix_high</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant transition-colors">ابزارها</span>
+</button>
+<!-- تب ۳: تنظیمات -->
+<button class="tab-item flex flex-col items-center justify-center gap-space-xs min-w-[64px] min-h-[44px] transition-all" id="nav-btn-settings" onclick="AdminApp.navigate('settings')">
+<div class="w-14 h-8 rounded-full flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant text-[24px]">settings</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant transition-colors">تنظیمات</span>
+</button>
+</div>
+</nav>
+<!-- ================= CLIENT APPLICATION LOGIC ================= -->
+<script>
+    const AdminApp = {
+      activeView: 'home',
+      currentPreset: '',
+      toastTimer: null,
+
+      // Smart sample database for local generation
+      samples: {
+        caption: [
+          (topic, tone, cta) => `🔥 اگر دنبال یک جهش واقعی در «${topic}» هستی، این پست دقیقا برای توئه!\n\nاکثر افراد ساعت‌ها وقت می‌گذارند اما به نتیجه دلخواه نمی‌رسند چون یک نکته ساده رو فراموش می‌کنند: الگوریتم توجه رو جذب می‌کنه، نه فقط تلاش خالی رو!\n\n💡 ۳ نکته طلایی که باید از امروز اجرا کنی:\n۱. قلاب اول ۳ ثانیه‌ای واضح و مستقیم\n۲. حفظ سادگی پیام بدون حاشیه\n۳. ارزش واقعی که مخاطب حاضر باشه ذخیره کنه\n\n📌 لحن محتوا: ${tone}\n🎯 هدف این پست: ${cta}\n\n👇 توی کامنت‌ها برام بنویس: بزرگ‌ترین چالش تو توی «${topic}» الان چیه؟ تک‌تک کامنت‌ها رو با عشق جواب می‌دم!\n\n#${topic.replace(/\s+/g, '_')} #تولید_محتوا #اینستاگرام #رشد_پیج #ادمین_اینستاگرام #تعامل_بالا`,
+          (topic, tone, cta) => `✨ راز ناگفته‌ای درباره «${topic}» که هیچ‌کس بهت نمی‌گه!\n\nمدت‌ها بود می‌خواستم این تجربه رو باهاتون به اشتراک بذارم. وقتی روی «${topic}» تمرکز کردیم، متوجه شدیم مخاطب به صداقت بیشتر از تبلیغات خشک اهمیت میده.\n\n✅ چک‌لیست کاربردی برای نتیجه ۱۰۰٪:\n• شفافیت در ارائه ارزش\n• ایجاد ارتباط عاطفی در خط اول\n• دعوت به اقدام صریح بدون گیج کردن\n\n🎯 اقدام الان:\n${cta === 'فروش مستقیم و دایرکت' ? 'همین الان کلمه «تخفیف» رو دایرکت بفرست تا لینک ویژه برات ارسال بشه!' : 'این پست رو سیو کن که موقع اجرا گم نکنیش و بفرست واسه ادمینی که بهش نیاز داره!'} 💜\n\n#${topic.replace(/\s+/g, '_')} #ادمین_حرفه‌ای #ایده_محتوا #اکسپلور_اینستاگرام #ترفند_فروش`
+        ],
+        reels: [
+          (topic, dur, style) => `🎬 سناریوی ویدیوی ریلز: ${topic}\n⏱ مدت زمان پیشنهادی: ${dur}\n🎥 سبک فیلمبرداری: ${style}\n\n━━━━━━━━━━━━━━━━━━━━━\n⚡ [ثانیه ۰ تا ۳ - قلاب شوکه‌کننده]:\n(تصویر: نگاه مستقیم به دوربین، دست به سینه یا در حال انجام کار سریع)\nدیالوگ قلاب: «فکر می‌کردم ${topic} آسونه، تا وقتی که این اشتباه مرگبار رو فهمیدم!...»\n\n🎬 [ثانیه ۳ تا ۱۵ - بدنه و حل چالش]:\n(تصویر: کات‌های سریع ۱.۵ ثانیه‌ای از پشت صحنه و نمایش راهکار)\nنریشن: «خیلی‌ها میان وقت هدر میدن روی جزئیات فرعی، در حالی که فقط با این یک تغییر، بازدهی ۳ برابر میشه. قدم اول اینه که مستقیم بری سر اصل مطلب.»\n\n💥 [ثانیه ۱۵ تا انتهای ویدیو - پایان‌بندی و CTA]:\n(تصویر: لبخند رضایت‌بخش و اشاره به پایین صفحه)\nدیالوگ: «اگر هنوز این روش رو تست نکردی، همین الان توی کپشن جزئیات کامل رو بخون و سیوش کن تا یادت نره!»\n\n🎵 موزیک پیشنهادی: بیت ترند ملایم و کوبنده (ضرب‌دار و ریتمیک)\n🏷 برچسب روی ویدیو: این اشتباه رو تکرار نکن! ❌`,
+          (topic, dur, style) => `🎬 سناریوی نسخه جایگزین (وایرال سریع): ${topic}\n⏱ مدت زمان: ${dur}\n🎥 سبک تصویربرداری: ${style}\n\n━━━━━━━━━━━━━━━━━━━━━\n⚡ [ثانیه ۰ تا ۳ - قلاب کنجکاوی شدید]:\n(حرکت سریع دوربین به سمت سوژه با ترنزیشن پرشتاب)\nدیالوگ: «اگه ادمین پیجی هستی یا به ${topic} فکر می‌کنی، این ویدیو مال توئه نه کس دیگه!»\n\n🎬 [ثانیه ۳ تا ۲۰ - مقایسه قبل و بعد]:\n(نمایش مقایسه‌ای: روش غلط با علامت ضربدر قرمز در برابر روش درست با تیک سبز)\nنریشن: «تفاوت یه محتوای معمولی با محتوایی که میره اکسپلور دقیقا توی نحوه شروع همین ۳ ثانیه است.»\n\n💥 [پایان‌بندی ریلز]:\n«بفرست برای همکار یا رفیقت که هنوز سنتی کار می‌کنه! برای سناریوهای بیشتر ما رو دنبال کن.»`
+        ],
+        planner: [
+          (topic, days, goal) => `📅 تقویم تولید محتوای هوشمند (${days})\n🎯 حوزه: ${topic} | هدف اصلی: ${goal}\n━━━━━━━━━━━━━━━━━━━━━\n\n🔹 شنبه:\n• استوری (ساعت ۱۰): نظرسنجی چالشی و طرح مسئله روز پیرامون ${topic}\n• پست/ریلز (ساعت ۱۸:۳۰): پست آموزشی قلاب‌محور با تیتر «چطور در ${topic} جلو بیفتیم؟»\n\n🔹 دوشنبه:\n• استوری (ساعت ۱۲): آنباکس / پشت‌صحنه ساخت محتوا و آماده‌سازی سفارش‌ها\n• ریلز سریع (ساعت ۱۹): معرفی یک اشتباه رایج در ۳۰ ثانیه\n\n🔹 چهارشنبه:\n• استوری تعاملی: کوییز باکس یا پرسش و پاسخ (Q&A) در استوری\n• پست کاروسل (ساعت ۱۸): ۵ نکته اسلایدی خلاصه و قابل سیو\n\n🔹 جمعه:\n• استوری جمعه: حس خوب، ارتباط صمیمی و خلاصه دستاوردهای هفته\n• یادآوری: تعامل ۳۰ دقیقه‌ای با پیج‌های همکار بعد از هر انتشار!\n\n💡 نکته الگوریتم: بهترین زمان انتشار پیج شما بر اساس داده‌ها بین ۱۸:۰۰ تا ۲۰:۳۰ است.`,
+          (topic, days, goal) => `📅 نسخه جایگزین تقویم هفتگی: ${topic}\n🎯 استراتژی انتخابی: ${goal}\n━━━━━━━━━━━━━━━━━━━━━\n\n🔹 یکشنبه:\n• ریلز سناریومحور (ساعت ۱۷:۳۰): داستان تحول یا تجربه واقعی یک مشتری\n• استوری: نمایش نظرات رضایت و هایلایت‌های جدید\n\n🔹 سه‌شنبه:\n• کاروسل آموزشی عمیق (ساعت ۱۹): راهنمای قدم‌به‌قدم برای افراد مبتدی\n• استوری مکمل: لایو ۱۰ دقیقه‌ای یا جعبه سوال تخصصی\n\n🔹 پنج‌شنبه:\n• ریلز شوخ‌طبعی/ترند کاری (ساعت ۱۸): چالش مرتبط با ${topic}\n• استوری آخرهفته: تخفیف ۲۴ ساعته اختصاصی همراه با استیکر شمارش معکوس`
+        ],
+        responder: [
+          (text, tone) => `📩 پاسخ پیشنهادی ۱ (لحن ${tone}):\n«سلام و درود دوست عزیزم! 😍 خیلی خوشحالم که به کار ما توجه کردی. در مورد پیامت: دقیقا حق با شماست! برای اینکه دقیق‌ترین راهنمایی رو خدمتت تقدیم کنم، جزئیات کامل رو همین الان توی دایرکت برات فرستادم. دایرکتت رو چک کن مهربون! 🌸»\n\n📩 پاسخ پیشنهادی ۲ (سریع و مستقیم):\n«سلام وقت شما بخیر 🌿 بله حتما! تمامی سفارش‌ها با بسته‌بندی ویژه و ضمانت تقدیمتون میشه. برای ثبت سریع یا مشاوره، فقط کافیه کلمه «ثبت» رو دایرکت کنی تا همکارانم اولویت رسیدگی برات بگذارند. مرسی از انرژی خوبت ✨»`,
+          (text, tone) => `📩 پاسخ پیشنهادی نسخه دو (مدیریت اعتراض و فروشنده):\n«سلام روزتون بخیر دوست خوبم 🤍 ممنون از نظرت. کاملاً درکت می‌کنم! ما در کیفیت و اصالت بالاترین استاندارد رو در نظر گرفتیم تا خیالت از خریدی که می‌کنی کاملاً راحت باشه. به عنوان تشکر از همراهیت، یک هدیه کوچیک برای خرید اولت در نظر گرفتیم؛ خوشحال میشم تشریف بیاری دایرکت تا تقدیمت کنم! 🎁✨»`
+        ]
+      },
+
+      init() {
+        this.updateHeader('home');
+      },
+
+      // Navigation handler
+      navigate(viewId) {
+        this.activeView = viewId;
+        
+        // Hide all views
+        document.querySelectorAll('.view-panel').forEach(el => {
+          el.classList.add('hidden');
+        });
+
+        // Show target view
+        const target = document.getElementById(`view-${viewId}`);
+        if (target) {
+          target.classList.remove('hidden');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Update bottom navigation bar styles
+        this.updateNavTabs(viewId);
+        this.updateHeader(viewId);
+      },
+
+      updateNavTabs(viewId) {
+        document.querySelectorAll('.tab-item').forEach(btn => {
+          btn.classList.remove('tab-active');
+        });
+
+        if (viewId === 'home') {
+          document.getElementById('nav-btn-home')?.classList.add('tab-active');
+        } else if (viewId === 'settings') {
+          document.getElementById('nav-btn-settings')?.classList.add('tab-active');
+        } else {
+          // Tool views map to tools tab
+          document.getElementById('nav-btn-tools')?.classList.add('tab-active');
+        }
+      },
+
+      updateHeader(viewId) {
+        const titleEl = document.getElementById('app-header-title');
+        const subtitleEl = document.getElementById('app-header-subtitle');
+        const backBtn = document.getElementById('header-back-btn');
+
+        if (viewId === 'home') {
+          titleEl.textContent = 'ادمین‌یار';
+          subtitleEl.textContent = 'Home';
+          backBtn.classList.add('hidden');
+        } else if (viewId === 'caption') {
+          titleEl.textContent = 'کپشن‌ساز هوشمند';
+          subtitleEl.textContent = 'تولید متن و هشتگ';
+          backBtn.classList.remove('hidden');
+        } else if (viewId === 'reels') {
+          titleEl.textContent = 'سناریوی ریلز';
+          subtitleEl.textContent = 'قلاب و ایده ویدیویی';
+          backBtn.classList.remove('hidden');
+        } else if (viewId === 'planner') {
+          titleEl.textContent = 'برنامه‌ریز محتوا';
+          subtitleEl.textContent = 'تقویم انتشار هفتگی';
+          backBtn.classList.remove('hidden');
+        } else if (viewId === 'responder') {
+          titleEl.textContent = 'پاسخ‌ساز دایرکت';
+          subtitleEl.textContent = 'دستیار تعامل و کامنت';
+          backBtn.classList.remove('hidden');
+        } else if (viewId === 'settings') {
+          titleEl.textContent = 'تنظیمات';
+          subtitleEl.textContent = 'مدیریت و اتصال اکانت';
+          backBtn.classList.remove('hidden');
+        }
+      },
+
+      // Open specific tool with preset topic
+      openToolWithPreset(toolId, topicText) {
+        this.navigate(toolId);
+        setTimeout(() => {
+          if (toolId === 'reels') {
+            const input = document.getElementById('reels-input-topic');
+            if (input) input.value = topicText;
+          } else if (toolId === 'caption') {
+            const input = document.getElementById('caption-input-topic');
+            if (input) input.value = topicText;
+          }
+        }, 50);
+      },
+
+      // Tools Bottom Sheet Modal
+      openToolsSheet() {
+        const backdrop = document.getElementById('tools-modal-backdrop');
+        const sheet = document.getElementById('tools-modal-sheet');
+        backdrop.classList.remove('hidden');
+        setTimeout(() => {
+          backdrop.classList.remove('opacity-0');
+          sheet.classList.remove('translate-y-full');
+        }, 10);
+      },
+
+      closeToolsSheet() {
+        const backdrop = document.getElementById('tools-modal-backdrop');
+        const sheet = document.getElementById('tools-modal-sheet');
+        sheet.classList.add('translate-y-full');
+        backdrop.classList.add('opacity-0');
+        setTimeout(() => {
+          backdrop.classList.add('hidden');
+        }, 280);
+      },
+
+      selectToolAndClose(toolId) {
+        this.closeToolsSheet();
+        this.navigate(toolId);
+      },
+
+      // Toast Notification
+      showToast(message) {
+        const toast = document.getElementById('toast-notification');
+        const toastText = document.getElementById('toast-text');
+        if (!toast || !toastText) return;
+
+        toastText.textContent = message;
+        toast.classList.remove('opacity-0', 'translate-y-2');
+        toast.classList.add('opacity-100', 'translate-y-0');
+
+        if (this.toastTimer) clearTimeout(this.toastTimer);
+        this.toastTimer = setTimeout(() => {
+          toast.classList.add('opacity-0', 'translate-y-2');
+          toast.classList.remove('opacity-100', 'translate-y-0');
+        }, 2800);
+      },
+
+      // Real Copy to Clipboard
+      async copyTextFromElement(elementId) {
+        const el = document.getElementById(elementId);
+        if (!el) return;
+        const text = el.innerText || el.textContent;
+        try {
+          if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(text);
+          } else {
+            const textArea = document.createElement("textarea");
+            textArea.value = text;
+            textArea.style.position = "fixed";
+            textArea.style.left = "-999999px";
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            document.execCommand('copy');
+            textArea.remove();
+          }
+          this.showToast('✓ با موفقیت کپی شد! آماده انتشار در اینستاگرام');
+        } catch (err) {
+          this.showToast('✓ متن انتخاب شد، آماده کپی');
+        }
+      },
+
+      // --- GENERATION ROUTINES WITH VALIDATION & REALISTIC LOCAL TIMERS ---
+      generateCaption(variantIndex = 0) {
+        const input = document.getElementById('caption-input-topic');
+        const errText = document.getElementById('caption-error-text');
+        const btn = document.getElementById('btn-generate-caption');
+        const topic = input.value.trim();
+
+        if (!topic) {
+          errText.classList.remove('hidden');
+          input.classList.add('border-error', 'ring-2', 'ring-error/20');
+          input.focus();
+          return;
+        }
+
+        errText.classList.add('hidden');
+        input.classList.remove('border-error', 'ring-2', 'ring-error/20');
+
+        const originalContent = btn.innerHTML;
+        btn.disabled = true;
+        btn.innerHTML = `<span class="material-symbols-outlined text-[20px] animate-spin">progress_activity</span><span>در حال پردازش هوشمند محلی بر اساس الگوریتم اینستاگرام...</span>`;
+
+        setTimeout(() => {
+          const tone = document.getElementById('caption-tone').value;
+          const cta = document.getElementById('caption-cta').value;
+          const generatorFn = this.samples.caption[variantIndex % this.samples.caption.length];
+          const result = generatorFn(topic, tone, cta);
+
+          document.getElementById('caption-result-text').textContent = result;
+          document.getElementById('caption-result-container').classList.remove('hidden');
+          
+          btn.innerHTML = originalContent;
+          btn.disabled = false;
+
+          document.getElementById('caption-result-container').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          this.showToast('کپشن هوشمند با موفقیت تولید شد ✨');
+        }, 850);
+      },
+
+      regenerateCaption() {
+        const badge = document.getElementById('caption-badge');
+        if (badge) {
+          badge.textContent = 'نسخه جدید تولید شد ✨';
+          badge.classList.add('bg-tertiary-fixed', 'text-tertiary');
+        }
+        this.generateCaption(1);
+      },
+
+      generateReels(variantIndex = 0) {
+        const input = document.getElementById('reels-input-topic');
+        const errText = document.getElementById('reels-error-text');
+        const btn = document.getElementById('btn-generate-reels');
+        const topic = input.value.trim();
+
+        if (!topic) {
+          errText.classList.remove('hidden');
+          input.classList.add('border-error', 'ring-2', 'ring-error/20');
+          input.focus();
+          return;
+        }
+
+        errText.classList.add('hidden');
+        input.classList.remove('border-error', 'ring-2', 'ring-error/20');
+
+        const originalContent = btn.innerHTML;
+        btn.disabled = true;
+        btn.innerHTML = `<span class="material-symbols-outlined text-[20px] animate-spin">progress_activity</span><span>در حال طراحی سناریو و قلاب‌های ۳ ثانیه‌ای...</span>`;
+
+        setTimeout(() => {
+          const dur = document.getElementById('reels-duration').value;
+          const style = document.getElementById('reels-style').value;
+          const generatorFn = this.samples.reels[variantIndex % this.samples.reels.length];
+          const result = generatorFn(topic, dur, style);
+
+          document.getElementById('reels-result-text').textContent = result;
+          document.getElementById('reels-result-container').classList.remove('hidden');
+
+          btn.innerHTML = originalContent;
+          btn.disabled = false;
+
+          document.getElementById('reels-result-container').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          this.showToast('سناریوی ریلز آماده ضبط شد 🎬');
+        }, 900);
+      },
+
+      regenerateReels() {
+        const badge = document.getElementById('reels-badge');
+        if (badge) {
+          badge.textContent = 'نسخه جدید تولید شد ✨';
+        }
+        this.generateReels(1);
+      },
+
+      generatePlanner(variantIndex = 0) {
+        const input = document.getElementById('planner-input-topic');
+        const errText = document.getElementById('planner-error-text');
+        const btn = document.getElementById('btn-generate-planner');
+        const topic = input.value.trim();
+
+        if (!topic) {
+          errText.classList.remove('hidden');
+          input.classList.add('border-error', 'ring-2', 'ring-error/20');
+          input.focus();
+          return;
+        }
+
+        errText.classList.add('hidden');
+        input.classList.remove('border-error', 'ring-2', 'ring-error/20');
+
+        const originalContent = btn.innerHTML;
+        btn.disabled = true;
+        btn.innerHTML = `<span class="material-symbols-outlined text-[20px] animate-spin">progress_activity</span><span>در حال تقویم‌بندی و تعیین ساعات انتشار...</span>`;
+
+        setTimeout(() => {
+          const days = document.getElementById('planner-days').value;
+          const goal = document.getElementById('planner-goal').value;
+          const generatorFn = this.samples.planner[variantIndex % this.samples.planner.length];
+          const result = generatorFn(topic, days, goal);
+
+          document.getElementById('planner-result-text').textContent = result;
+          document.getElementById('planner-result-container').classList.remove('hidden');
+
+          btn.innerHTML = originalContent;
+          btn.disabled = false;
+
+          document.getElementById('planner-result-container').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          this.showToast('تقویم محتوایی هفته با موفقیت چیده شد 📅');
+        }, 800);
+      },
+
+      regeneratePlanner() {
+        const badge = document.getElementById('planner-badge');
+        if (badge) badge.textContent = 'نسخه جدید تولید شد ✨';
+        this.generatePlanner(1);
+      },
+
+      generateResponder(variantIndex = 0) {
+        const input = document.getElementById('responder-input-text');
+        const errText = document.getElementById('responder-error-text');
+        const btn = document.getElementById('btn-generate-responder');
+        const text = input.value.trim();
+
+        if (!text) {
+          errText.classList.remove('hidden');
+          input.classList.add('border-error', 'ring-2', 'ring-error/20');
+          input.focus();
+          return;
+        }
+
+        errText.classList.add('hidden');
+        input.classList.remove('border-error', 'ring-2', 'ring-error/20');
+
+        const originalContent = btn.innerHTML;
+        btn.disabled = true;
+        btn.innerHTML = `<span class="material-symbols-outlined text-[20px] animate-spin">progress_activity</span><span>در حال پردازش هوشمند پاسخ تعاملی...</span>`;
+
+        setTimeout(() => {
+          const tone = document.getElementById('responder-tone').value;
+          const generatorFn = this.samples.responder[variantIndex % this.samples.responder.length];
+          const result = generatorFn(text, tone);
+
+          document.getElementById('responder-result-text').textContent = result;
+          document.getElementById('responder-result-container').classList.remove('hidden');
+
+          btn.innerHTML = originalContent;
+          btn.disabled = false;
+
+          document.getElementById('responder-result-container').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          this.showToast('پاسخ هوشمند آماده ارسال شد 💬');
+        }, 750);
+      },
+
+      regenerateResponder() {
+        const badge = document.getElementById('responder-badge');
+        if (badge) badge.textContent = 'نسخه جدید تولید شد ✨';
+        this.generateResponder(1);
+      },
+
+      // --- INLINE EDITING INTERACTION ---
+      toggleEditResult(type) {
+        const displayBox = document.getElementById(`${type}-display-box`);
+        const editBox = document.getElementById(`${type}-edit-box`);
+        const textEl = document.getElementById(`${type}-result-text`);
+        const textarea = document.getElementById(`${type}-editable-textarea`);
+
+        if (displayBox.classList.contains('hidden')) {
+          this.cancelEditResult(type);
+        } else {
+          textarea.value = textEl.textContent.trim();
+          displayBox.classList.add('hidden');
+          editBox.classList.remove('hidden');
+          textarea.focus();
+        }
+      },
+
+      saveEditResult(type) {
+        const displayBox = document.getElementById(`${type}-display-box`);
+        const editBox = document.getElementById(`${type}-edit-box`);
+        const textEl = document.getElementById(`${type}-result-text`);
+        const textarea = document.getElementById(`${type}-editable-textarea`);
+
+        textEl.textContent = textarea.value;
+        editBox.classList.add('hidden');
+        displayBox.classList.remove('hidden');
+        this.showToast('✓ ویرایش شما با موفقیت ذخیره شد');
+      },
+
+      cancelEditResult(type) {
+        const displayBox = document.getElementById(`${type}-display-box`);
+        const editBox = document.getElementById(`${type}-edit-box`);
+        editBox.classList.add('hidden');
+        displayBox.classList.remove('hidden');
+      },
+
+      // Additional UI interactions
+      syncAccount(btn) {
+        const orig = btn.innerHTML;
+        btn.innerHTML = `<span class="material-symbols-outlined text-[18px] animate-spin text-primary">sync</span>`;
+        setTimeout(() => {
+          btn.innerHTML = orig;
+          this.showToast('وضعیت اکانت studio_brand@ بروزرسانی شد.');
+        }, 700);
+      },
+
+      toggleBookmarkHero(btn) {
+        const icon = document.getElementById('hero-bookmark-icon');
+        if (icon.textContent === 'bookmark') {
+          icon.textContent = 'bookmark_border';
+          this.showToast('ایده از نشان‌شده‌ها حذف شد');
+        } else {
+          icon.textContent = 'bookmark';
+          this.showToast('ایده داغ امروز ذخیره شد 🔖');
+        }
+      },
+
+      switchInstagramAccount() {
+        const current = document.getElementById('connected-page-label');
+        if (current.textContent.includes('studio_brand')) {
+          current.textContent = 'پیج متصل: digi_academy@';
+          this.showToast('پیج متصل به digi_academy@ تغییر یافت.');
+        } else {
+          current.textContent = 'پیج متصل: studio_brand@';
+          this.showToast('پیج متصل به studio_brand@ تغییر یافت.');
+        }
+      }
+    };
+
+    // Initialize application on load
+    document.addEventListener('DOMContentLoaded', () => {
+      AdminApp.init();
+
+      // Clear input validation errors on input
+      ['caption-input-topic', 'reels-input-topic', 'planner-input-topic', 'responder-input-text'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.addEventListener('input', () => {
+            el.classList.remove('border-error', 'ring-2', 'ring-error/20');
+            const err = document.getElementById(id.replace('input-topic', 'error-text').replace('input-text', 'error-text'));
+            if (err) err.classList.add('hidden');
+          });
+        }
+      });
+    });
+  </script>
+</body></html>
