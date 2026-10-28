@@ -1,12 +1,42 @@
-
-   <!DOCTYPE html>
-   <html lang="fa" dir="rtl">
-   <head>
-       <meta charset="UTF-8">
-       <title>ادمین یار</title>
-   </head>
-   <body style="font-family: sans-serif; text-align: center; padding: 50px;">
-       <h1>به ادمین یار خوش آمدید</h1>
-       <p>سایت با موفقیت بارگذاری شد.</p>
-   </body>
-   </html>
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پنل مدیریت ادمین‌یار</title>
+    <style>
+        * { box-sizing: border-box; font-family: Tahoma, 'Vazirmatn', sans-serif; }
+        body { background: #f0f2f5; margin: 0; padding: 30px; text-align: center; }
+        h1 { color: #1e293b; margin-bottom: 8px; }
+        p { color: #64748b; margin-bottom: 30px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; max-width: 900px; margin: 0 auto; }
+        .btn {
+            background: white; border: 2px solid #e2e8f0; border-radius: 12px;
+            padding: 20px; text-decoration: none; color: #0f172a; font-weight: bold;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); transition: all 0.2s ease;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+        }
+        .btn:hover { background: #2563eb; color: white; border-color: #2563eb; transform: translateY(-3px); }
+        .btn span { font-size: 13px; color: #94a3b8; margin-top: 5px; }
+        .btn:hover span { color: #e0e7ff; }
+    </style>
+</head>
+<body>
+    <h1>پنل مدیریت ادمین‌یار</h1>
+    <p>برای مشاهده هر بخش، روی آن کلیک کنید:</p>
+    <div class="grid">
+        <a class="btn" href="_1/">صفحه ۱ <span>ورود به بخش اول</span></a>
+        <a class="btn" href="_2/">صفحه ۲ <span>ورود به بخش دوم</span></a>
+        <a class="btn" href="_3/">صفحه ۳ <span>ورود به بخش سوم</span></a>
+        <a class="btn" href="_4/">صفحه ۴ <span>ورود به بخش چهارم</span></a>
+        <a class="btn" href="_5/">صفحه ۵ <span>ورود به بخش پنجم</span></a>
+        <a class="btn" href="_6/">صفحه ۶ <span>ورود به بخش ششم</span></a>
+        <a class="btn" href="_7/">صفحه ۷ <span>ورود به بخش هفتم</span></a>
+        <a class="btn" href="_8/">صفحه ۸ <span>ورود به بخش هشتم</span></a>
+        <a class="btn" href="_9/">صفحه ۹ <span>ورود به بخش نهم</span></a>
+        <a class="btn" href="_10/">صفحه ۱۰ <span>ورود به بخش دهم</span></a>
+        <a class="btn" href="_11/">صفحه ۱۱ <span>ورود به بخش یازدهم</span></a>
+        <a class="btn" href="_12/">صفحه ۱۲ <span>ورود به بخش دوازدهم</span></a>
+    </div>
+</body>
+</html>
